@@ -1,0 +1,12 @@
+Identifier Rules (applies for Variable, Method and Class Names)
+
+Identifiers are case sensitive (b/c Java is case sensitive)
+
+Identifiers can only have:
+
+a-z		A-Z		0-9		_ $
+
+
+Cannot have:
+
+other symbols(other than $ and _)	Java keywords	Start with number	Spaces
