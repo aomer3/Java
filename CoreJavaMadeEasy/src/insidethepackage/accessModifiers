@@ -1,0 +1,31 @@
+Access Modifiers can be applied to:
+
+1.Classes
+
+2.Class members (variables, methods, constructors)
+
+Types of Access Modifiers:
+
+1. Private - class members marked private can only be accessed by their belonging class
+
+2. Protected - class and class members marked protected can be accessed at package level 
+               and also outside the package to inherited child classes inheriting it
+               
+3. Public - class and class members marked public can be accessed by any class or package 
+
+4. <package> - if we don't use any modifiers, then <package> will be the default modifier
+	           a. There is no specific keyword for package modifier 
+	           b. class or class members with <package> modifier can be accessed within 
+	           the package, any other class in the same package can access the class or 
+	           the class members. Cannot be accessed outside that particular package.
+
+	
+Class = can only accept public or <package> modifier 
+		a. if you mark a class private, then no other classes in the program can access it 
+		   (making the class useless)
+		b. protected keyword is used for inheritance, and this is used with class members,
+		   not the actual class
+		   
+Blocks = we do not apply any access modifiers to blocks because we do not explicitly invoke
+         the blocks, they're automatically executed by the JVM when an object is created or
+         a class is loaded. 
