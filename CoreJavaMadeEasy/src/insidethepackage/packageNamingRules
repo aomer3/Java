@@ -1,0 +1,3 @@
+Packages Naming rules
+1. Package names must always be lowercase
+2. Package names should be in reverse url domain order (i.e google.com should be com.google)

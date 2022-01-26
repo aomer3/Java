@@ -1,15 +1,21 @@
-package g.accessModifiers.insidethepackage;
+package h.packages.insidethepackage;
+
+import h.packages.insidethepackage.subpackage.E;
 
 public class B {
 	
 	public static void main(String[] args) {
 		
-	A objectA = new A();
-	
-//	System.out.println(objectA.a); //error = private classes members not accessible 
-	System.out.println(objectA.b); //package modifier accessible within the same package
-	System.out.println(objectA.c); //protected modifier accessible within the same package
-	System.out.println(objectA.d); //public modifier, can be accessed anywhere
+		//Accessing another package
+		A.a1(); //static method can be accessed without object creation
+		
+		A objectA = new A();
+		objectA.a2();
+		
+		//Accessing a sub-package
+		E objectE = new E(); //sub-packages must be imported
+		objectE.e1();
+		
 		
 	}
 

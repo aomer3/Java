@@ -1,15 +1,21 @@
-package g.accessModifiers.outsidethepackage;
-import g.accessModifiers.insidethepackage.*;
+package h.packages.outsidethepackage;
 
-public class C extends A {
+import h.packages.insidethepackage.A;
+
+public class C {
 	
 	public static void main(String[] args) {
-				
-	C objectC = new C();
-	
-//	System.out.println(objectC.a); //error = private classes members not accessible 
-//	System.out.println(objectC.b); //error = package level not accessible outside package
-	System.out.println(objectC.c); //protected class members accessible if inherited
-	System.out.println(objectC.d); //public class members accessible everywhere
+		
+		//Classes from another package can only be accessed in two ways:
+		
+		//Method 1: using import statement 
+		A.a1();
+		
+		//Method 2: Using fully qualified name 
+		h.packages.insidethepackage.A.a1(); 
+		
+		A objectA = new A();
+		objectA.a2();
 	}
+
 }
