@@ -1,7 +1,7 @@
 Static Members                                              Non-Static Members      
--Belong to a class                                          -Belong to an object  
+-Belong to a class                                          -Belong to an object
 -Accessed using Class Name	                                -Accessed using the object name
 -Static block executed when the                             -Non-static block executed as soon as object is created but before the constructor is 
-class is loaded to memory	                                   invoked                               
--Memory allocation and variable                             -Memory allocation and variable initialization happens  after object creation 
+class is loaded to memory	                                   invoked
+-Memory allocation and variable                             -Memory allocation and variable initialization happens  after object creation
 initialization happens during class loading
