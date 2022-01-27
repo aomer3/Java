@@ -1,0 +1,29 @@
+Inheritance Notes:
+
+1. Child is able to use parent's methods, and child is able to use Object class methods 
+	a. this is because of chain of inheritance (child > parent > object), 
+	   also known as Class Hierarchy, where parent inherits from Object class implicitly 
+	   
+2. Child and parent class share same memory location
+
+3. Method Overriding - Create method in child class with the same exact signature as the 
+   Parent class. This will define a different functionality in the child method class.
+
+4. Super keyword allows the child to access parent's class fields and methods
+
+5. a. If no constructor exist in parent and child class, JVM creates both objects using the
+   default constructor (creating parent object first, then child object).
+   b. If a parameterized constructor exists in the parent class, the child class must also 
+   create a parameterized constructor and then call the parent class.
+   c. Super method can be placed in child constructor to call the parent constructor
+   
+6. With this() and super(), you can do constructor chaining, which is where one constructor
+   calls another, then another, and so on. 
+   this() = current class default constructor, super() = parent default constructor
+   
+7. Adding final to parent method will block parent methods from being overridden by child
+8. a. Shadowing is when a parent class and child class have a field with the same name
+   b. If you only use super() in the child constructor, only the parent field will have a 
+   value and the child field will be null. 
+   c. You must also use this keyword in child construtor below super() to store value for 
+   child
