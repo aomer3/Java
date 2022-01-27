@@ -1,0 +1,12 @@
+Encapsulation Notes
+1.Process of binding the class properties and methods together and hides the class fields,
+  making them only accessible through class methods
+	a. an object's class methods will be the only way to access that object's properties
+2. To achieve encapsulation, use private keyword for class fields, and public keyword
+   for class methods 
+   
+2 Advantages of Encapsulation 
+1. Security - because class fields are private, you can only access them through class methods
+		a. using methods to access fields allows for adding validations in those methods 
+		   before setting values to the class fields 
+2. Easy maintainability of code 
