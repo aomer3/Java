@@ -1,0 +1,14 @@
+An abstract class can never be instantiated and this is the real advantage of the 
+abstract class.
+
+For example, the class Animal could be an abstract class; but in real life you can never 
+have an instance of an Animal; that makes no sense at all as you can't just create 
+an Animal. You can create a type of Animal, such as a Cat or Dog in real life as they are 
+real-world entities. 
+
+So in terms of the translation between the code design and the real-world concept 
+or situation, abstract classes are much better as they can provide a much neater portrayal 
+of the real-world situation.
+
+
+Resource:https://stackoverflow.com/questions/19865578/why-is-using-abstract-class-better-for-inheritance-than-using-normal-class

@@ -1,0 +1,22 @@
+Differences between an Interface and an Abstract Class
+
+1.Implementation 
+	a. An interface will not have any implementation of the methods it has, all methods are 
+	   abstract. It acts as a contract for classes that implement it. 
+	b. An abstract class will have partial implementation of the methods that it has. If a
+	   class has one abstract method, then it's an abstract class. 
+2. Access modifiers 
+	a. By default, in an interface, every method is public and abstract 
+	b. An abstract class can have concrete methods that don't have this restriction, and 
+	   can use other modifiers as well 
+3. Variables 
+	a. By default, in an interface, every variable is public, static and final (constants),
+	   and variables should be initialized as soon as they're declared.
+	b. An abstract class can have different types of variable; variables do not have to be
+	   initialized as soon as they're declared.
+4. Blocks
+	a. An interface can not have static or instance blocks
+	b. An abstract class can have static and instance blocks
+5. Constructors
+	a. An interface cannot have constructors
+	b. An abstract class can have constructors 

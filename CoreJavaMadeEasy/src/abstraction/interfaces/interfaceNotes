@@ -1,0 +1,5 @@
+Benefits to using an Interface
+1. Ability to have multiple inheritance - without interfaces, you could only inherit from one class
+
+2. Ability to have complete abstraction - we don't want to know how a class works internally,
+   we just want to use its methods 

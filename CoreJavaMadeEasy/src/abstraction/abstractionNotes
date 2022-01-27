@@ -1,0 +1,23 @@
+Abstraction Notes
+1. Abstraction hides the details of the object being used, and hides how the functionality of 
+   the object works, from the object that is using it.
+   		a. By hiding the internal details of an object or class, it makes it easier for
+   		   other classes to use it
+   
+2. When we want to copy a document from a printer, we don't care how the printer works
+   internally. We just care what buttons to push to copy a document.
+   
+3. Abstraction can be partially implemented by using abstract classes, or fully implemented
+   by using interfaces 
+   
+4. To mark a class or method as abstract, we use the abstract modifier 
+	a. If a class is marked abstract, you cannot create an instance of that class
+	
+5. A class can either be marked abstract or final, but cannot be both abstract and final.
+    a. This is b/c if a class is marked final, it cannot be inherited or extended, 
+       and an abstract method needs to be able to be extended or it's useless. 
+
+6. A method can either be marked abstract or static, but cannot be both abstract and static.
+	a. This is b/c if a method is marked static, then that will pass shared implementation 
+	   to classes using that method. An abstract method, however, needs a specific 
+	   implmentation by each class using the method. 
