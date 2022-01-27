@@ -1,0 +1,10 @@
+Polymorphism Notes
+
+1. Polymorphism - the ability for a class to behave differently when communicating with 
+   other classes 
+   
+2 Types of Polymorphism 
+1. Compile time polymorphism (static binding) - achieved through method overloading
+	a. Method overloading - where we define same method name but different method signatures
+2. Run time polymorphism (dynamic binding) - achieved through method overriding 
+	b. Method overriding - where a child class overrides the implementation of a parent method
