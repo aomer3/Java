@@ -1,0 +1,38 @@
+Exception Handling Notes
+
+3 Types of Errors 
+1. Compile time errors - not following program syntax rules 
+		a. using variables that have not yet been declared
+		b. assigning values incompatible with variable type without typecasting
+		c. invalid method declaration
+		d. trying to use "this" in a static context 
+2. Logical Errors = the program runs but b/c of a mistake in the logic, outputs wrong thing
+		a. storing an integer value above a data type's capacity 
+3. Runtime errors = exceptions that will cause program to crash
+		a. displays unfriendly messages to user (bad user experience)
+		b. exceptions are classes called by JVM when a runtime error occurs (can be predefined class or user created exception classes)
+		
+
+Exception Hierarchy 
+1. All exceptions inherit from Throwable class. Throwable has two child class:
+	a. Error - exceptions here cannot be handled in our program (like computer out of memory)
+	b. Exception - exceptions that we can handle in our program (IOException, SQLException, etc.)
+	c. RuntimeException - inherits from Exception class (ArtihmeticException, NullPOinterException, etc.)
+2. Checked vs unchecked exception
+	a. Checked exception - inherits directly from Exception class
+	b. Unchecked exception - inherits from RuntimeException class (which inherits from Exception class)
+	
+	
+Handling Exceptions 
+1. To handle exceptions, we use keywords: try, catch, finally, throw, throws
+	a. in most cases, you'll just be using try, catch
+	b. finally block 
+		1. Finally can be used with or without a catch block
+		2. Finally block is executed always, whether or not there is an exception thrown
+		3. You should close all your resources here in the finally block
+
+
+Assertions 
+1. Introduced in Java 1.4 for mainly testing and debugging the program 
+	a. can use assertions instead of system.out.println to test and debug
+	b. use Junit and Spring assertions
