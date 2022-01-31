@@ -1,0 +1,15 @@
+Executor Framework Notes
+
+
+Limitations of traditional way of creating threads (Thread, Runnable):
+1. Thread creation is time consuming 
+2. Poor Resource Management (if the program creates many threads but only uses a few, the 
+   other created threads will still be running but not actually doing any work)
+3. Application is not robust - if too many threads are created, the program will crash due 
+   to insufficient resources 
+   
+Executor Framework's solution
+1. Introduces a thread pool
+2. When a task-assigned thread finishes its task, instead of dying (like is the case 
+   traditionally), it goes back to the thread pool to be reused 
+3. Executor framework manages the lifecycle of the thread 
