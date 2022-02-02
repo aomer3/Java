@@ -1,0 +1,15 @@
+Garbage Collection Notes
+1. Each thread has 
+	a. stack space - where local primitive types are stored
+	b. heap space - where objects are stored 
+	
+2. Garbage collection 
+	a. the process where the JVM clears the memory allocation of an object
+	b. Garbage collector is a daemon thread that runs in the background
+	c. Garbage collector collects objects when they are unreachable 
+	d. Unreachable (example): an existing object A reassigns itself to a new object B, now 
+	   object A is unreachable and the garbage collector will remove it from memory
+	e. Unreachable (another example): if any object is set to null, it will be unreachable 
+	f. Garbage collector cannot be forced to run, but it can be requested. To request, use 
+	   System.gc()
+	   

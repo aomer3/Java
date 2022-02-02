@@ -1,0 +1,8 @@
+Inner Class Notes:
+1. Inner classes are nested classes. They are classes that exist inside another class
+2. They are of four types: static, non-static, local and anonymous inner classes
+3. Anonymous inner classes allow for interfaces to be implemented with their original identity
+4. Static, non-static, and local can have constructors but an anonymous class cannot have one
+	a. this is b/c anonymous inner classes do not have class names of their own, and a class
+	   name is needed to create a constructor
+
