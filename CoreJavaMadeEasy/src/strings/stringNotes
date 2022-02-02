@@ -1,0 +1,18 @@
+String Notes
+1. String = collection of characters
+2. String are Objects 
+
+Immutability 
+1. Strings once created cannot be changed, they're immutable
+2. Two Advantages of immutability 	
+	a. Performance
+	b. Thread Safety - if two strings are pointing to the same single String in memory, and 
+	   one String changes the value, it won't corrupt the data for the other String using that 
+	   value, because Strings are immutable. A new String with the new value is simple created.
+	   
+String Pooling
+1. Immutability is achieved by using string pools
+2. JVM creates a special memory location for Strings called a String Pool
+	a. if two Strings have values that are the same, both will reference the same single String
+	   in the String pool
+3. String pooling allows for better memory usage (String reusability) and increased performance

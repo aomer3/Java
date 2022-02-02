@@ -1,0 +1,14 @@
+StringBuffer and StringBuilder Notes:
+
+1. StringBuffer and StringBuilder share the same methods with String
+2. StringBuffer and StringBuilder have additional methods not found in String (i.e. reverse)
+
+
+Differences between String, StringBuffer and StringBuilder
+
+1. String is immutable. StringBuffer and StringBuilder are mutable
+2. StringBuffer is synchronized (all the methods are synchronized). StringBuilder is not.
+	if you want your strings to be mutalbe and:
+	a. If you want the String to take care of multithreading for you, use StringBuffer, but
+	   it will lower performance
+	b. If you want to handle multithreading on your own, use StringBuilder

@@ -1,0 +1,53 @@
+IO Streams Notes:
+1. An IO stream (input-output stream) is a logical handle to an input source from which we 
+   can read data, or an output source to which to write data
+
+4 Types of Streams in Java
+
+1. ByteStreams - reads and writes one byte at a time
+	a. should be using byte stream if we're dealing with binary data
+	
+2. CharacterStreams - reads and write one character, or two bytes (unicode) at a time
+	a. should be using character stream if working with textual data
+	
+3. BufferedStreams - wrappers for/use byte streams and character streams, allowing for more 
+   data to be read and written (a line at a time, instead of a single character or byte)
+   
+4. ObjectStreams - allows us to read and write objects to a file (this is called serialization)
+
+
+Stream Classes 
+1. Byte streams 
+	a. InputStream and OutputStream (abstract byte stream classes)
+	b. FileInputStream and FileOutputStream (implementations that extend InputStream and 
+	   OutputStream)
+2. Character streams
+	a. Reader and Writer (abstract character stream classes)
+	b. FileReader and FileWriter (implementations that extend Reader and Writer)
+3. File 
+	a. acts as a handle to the underlying file or folder in the machine
+4. Exceptions 
+	a. all of the stream classes will throw checked exceptions (i.e. FileNotFoundException, 
+	   or IOException)
+	b. must use exception handling when working with IO streams 
+	
+	
+String Tokenizers
+1.String tokenizers allow for strings to be broken down into multiple tokens (similar to 
+  split method)
+
+  
+Try with Resources
+1. This allows you to use the try block to automatically close resources instead of manually 
+   doing it in the finally block 
+   
+ 
+Serialization 
+1. Serialization allows us to write objects to an input stream or network stream 
+2. For an object to be serialized, its class must implement the marker interface Serializable
+3. Marker interfaces do not have any methods to implement, but gives permission to the JVM 
+   to certain behaviors 
+4. If you want a particular field in an object to not be serialized (i.e SSN because of its 
+   sensitive natures, or for security reasons), then use transient keyword before that field
+5. We use ObjectInputStream and ObjectOutputStream for serialization and deserialization
+6. Deserialization is reading a serialized file and creating an object from it 
