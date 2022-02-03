@@ -1,0 +1,10 @@
+Collection Static Methods Notes:
+
+2 Types of collection static methods:
+1. Collections
+2. Arrays
+
+Collections class methods
+1. sort()
+2. binarySearch() 
+3. reverse()

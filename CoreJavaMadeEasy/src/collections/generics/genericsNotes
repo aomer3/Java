@@ -1,0 +1,4 @@
+Generics Notes:
+1. Introduced in Java 1.5 to
+	a. provide type safety
+	b. avoid typecasting issues

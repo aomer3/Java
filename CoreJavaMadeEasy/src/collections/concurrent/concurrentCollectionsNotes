@@ -1,0 +1,37 @@
+Concurrent Collections Notes:
+1. When we work with collections in a multithreaded context, we have to use synchronization
+   to achieve thread safety 
+   
+Problems to consider with using collections and synchronization:
+1. Lock - once one thread access a collection, the entire collection is locked. Threads have
+   to wait for the collection to be unlocked before accessing it (synchronization). This causes
+   performance degradation in the program. 
+2. Fail fast iterators - when an iterator loops through a collection,  then you try to remove
+   items using a collection, we run into a concurrent modification exception.
+
+
+Concurrent Collections help fix these two issues (by allowing simultaneous access by multiple threads) 
+1. CopyOnWriteArrayList and CopyOnWriteArraySet
+	a. if a thread is trying to modify the CopyOnWriteArrayList/Set, a copy will be created 
+	   and those changes saved there, and the original will not be affected
+	b. this because the CopyOnWriteArrayList/Set are not locked (not synchronized)
+	c. use case: best to use when you have a lot of read operation, and a few update operations,
+	   but don't use if you have a lot of update operations (not recommended) because it will 
+	   create a lot of copies, slowing down the program
+	d. Fail Safe iterators - the iterators here will point back to the original list/set to
+	   perform the action, and will not throw concurrent modification exception
+	   
+ConcurrentHashMap 
+	a. Fine-grain locking - instead of locking the entire collection, the ConcurrentHashMap
+	   locks small amounts of the collection as needed 
+	   
+	   
+BlockingQueue
+1.BlockingQueue allows you to implement Producer-Consumer pattern
+2.Producer-Consumer pattern = a producer of work puts work into a queue, and a consumer takes
+  takes the work and finish it (i.e. ordering system)
+  a. Producer uses put method
+  b. Consumer uses take method
+  c. the BlockingQueue will block the producer if it is full and the consumer has not yet finished
+     processing the work. And it will block the consumer if there is no work and the consumer
+     is trying to take work.

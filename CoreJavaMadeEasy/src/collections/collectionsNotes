@@ -1,0 +1,65 @@
+Collections Notes:
+1. 4 Types of Interfaces: List, Set, Queue, Map
+2. List, Set and Queue belong to the Collections interface
+3. Map belongs to the Map interface (does not belong to the Collections interface)
+
+Functionality of Each Interface:
+1. List - allows duplicate objects
+2. Set - does not allow duplicate objects 
+3. Queue - First In First Out data structure, first stored object is the first one back out
+4. Map - holds key-value pairs 
+   
+Implementation of Each Interface:
+1. List - implemented by ArrayList and LinkedList
+2. Set - implemented by HashSet (extended by LinkedHashSet) and SortedSet (extended by TreeSet)
+	a. LinkedHashSet maintains the insertion order 
+	b. TreeSet maintains sorted order (either ascending or descending)
+3. Queue - implemented by LinkedList, PriorityQueue and extended by BlockingQueue interface
+4. Map - implemented by HashMap (extended by LinkedHashMap) and SortedMap (extended by TreeMap)
+	a. LinkedHashMap maintains the insertion order
+	b. TreeMap maintains sorted order (either ascending or descending)
+
+***Legacy classes (obsolete or rarely used)
+	a. Vector - all of the methods in it are synchronized, resulting in terrible performance 
+	b. Hashtable - all of the methods in it are synchronized, resulting in terrible performance
+
+
+ArrayList
+1. Uses an array to store objects
+	a. access is fast, b/c using array index to locate object
+	b. insertion and deletion is slow, b/c all other objects will have to be shifted
+	c. initial capacity is size 10 and each time it grows will grow by 1.5 times, better to 
+	   size the array correctly initially to avoid too much array copying/growing 
+	d. use case - good to use arrayList if doing a lot of read operations, do not use arrayList
+	   if doing a lot of insertion or deletion operations 
+
+LinkedList
+1. Stores data in form on nodes, each node has 3 fields:
+	a. node 1 - previous object memory location
+	b. node 2 - current object 
+	c. node 3 - next object memory location
+2. LinkedList node structure requires more memory usage to hold all of this extra information 
+3. LinkedList performance:
+	a. insertion and deletion fast
+	b. slow random access - JVM randomly allocates memory for the nodes anywhere in the heap, 
+	   so to access nodes randomly will take more time
+	   
+Set
+1. Collection where duplicates are not allowed
+
+
+
+Queues
+1. First In First Out data structure
+	a. whichever object is inserted first will be the first object retrieved from the collection
+2. PriorityQueue
+	b. do not allow duplicates
+	c. insertion order is not preserved
+	d. null values not allowed, will result in NullPointerException
+	e. using with a comparator, the FIFO order can be changed to a custom order
+	f. Objects added to PriorityQueue must have comparable interface implemented   
+	
+
+Maps
+1. In a map, both the keys and the values are objects
+2. Entry = a key and value pair
