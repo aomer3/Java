@@ -1,0 +1,8 @@
+Object Methods Notes:
+1. toString() = returns getClass().getName() + "@" + Integer.toHexString(hashCode()), if it 
+   is not overridden 
+2. hashCode() = HashMap and HashSet use the hashCode to store and retrieve objects quickly, 
+   by default the memory location is used as the hashCode if it is not overridden
+3. equals() = checks if two classes are equal. If this class is not overridden, the default 
+   value is == (comparing memory locations). If it is overridden, it can be used to compare 
+   content values instead of memory location.
