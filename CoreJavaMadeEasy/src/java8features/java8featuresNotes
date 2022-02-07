@@ -1,0 +1,58 @@
+Java 8 Features Notes:
+1. Lambda expressions
+2. Functional interfaces
+3. Default methods in interfaces
+4. Predicates
+5. Functions
+6. Stream API
+
+Lambda Expressions
+1. Purpose - introduces functional programming to Java
+2. Lambda - an anonymous function (a function that doesn't have a name, return type or 
+   access modifiers)
+3. Need to use functional interfaces to use lambdas
+	a. an interface that has only one abstract method is called a functional interface, and
+	   that one abstract method is called a functional method. Can have as many default 
+	   methods as it wants, but can only have one abstract method
+	b. example of functional interfaces = Runnable, Comparator
+	c. A class must have @FunctionalInterface annotation to restrict that class to one abstract 
+	   method, to be able to use lambda expressions
+4. Benefits of Lambdas
+	a. Less code to write
+	b. Easy to implement anonymous classes
+	c. lambda expressions can be passed as parameters to other methods
+	
+	
+Diamond Problem
+1. The reason why Java does not allow multiple inheritances is because if parent class A has
+   a method that is implemented by two child classes C and D, and E inherits from both C and D,
+   then E has conflicting implementations from C and D, and is unsure which implementation to use
+   
+
+Predicates
+1. A function with a single argument that returns a boolean value
+2. Since predicates are functional interfaces, they can be expressed with lambda expressions
+3. Predicates can be used as parameters inside of methods
+4. Predicates can be joined together, using and(), or() and negate()
+
+Functions
+1. Similar to predicates but can return any type (not restricted to boolean return like in 
+   predicate)
+2. Has one method called apply that can take in any type and return any type
+3. Since functions are functional interfaces, they can be expressed with lambda expressions
+
+Method Referencing using :: operator 
+1. Allows you to map methods and constructors to a functional interface's method
+2. To use ::, you must use the same parameters for both the method and the functional interface
+   but it's fine if other parts of the method signature are different (name, return type, access modifier)
+   
+Streams
+1. Allows you to process data inside a collection
+2. Processing the collection is done in two steps
+	a. Step 1 - configure the stream. This configuration can be done in two ways
+		1. Filtering using filter method (that takes in a predicate and returns the filtered
+		   stream based on that predicate)
+		2. Mapping using map method (that takes in a function and returns the filtered 
+		   stream based on that function)
+	b. Step 2 - process the stream. This can be done in various ways like collect(), count(),
+	   sorted(), min(), max(), etc.
