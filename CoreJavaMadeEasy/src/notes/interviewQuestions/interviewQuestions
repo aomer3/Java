@@ -1,0 +1,69 @@
+Interview Questions:
+
+1. Q: What are the important components involved in starting and running a Java program?
+   A: 
+   	  JDK - When wanting to build a Java application, you must first download and install a 
+      Java Development Kit (JDK). The JDK has in it a Java Runtime Environment (JRE) and 
+      comes with several commands such as "javac" that allows you to run a Java program.
+      The JDK downloaded and installed is specific to different operation system (WIndows JDk, 
+      Linux JDK). JRE can be installed separately, but it usually comes with the JDK installation.
+      
+      Compilation - when we compile a Java program, the Java compiler will covert the Java 
+      class into byte code (which is platform independent). The byte code is only understood 
+      by the JVM (which is different for each operating system). JVM is launched using the 
+      "java" command. The JVM then converts the byte code into machine code understood by the
+      operating system. The process of turning the source code into byte code which differing 
+      JVMs can use for their particular operating systems is what makes Java platform independent.
+      
+      Byte code = because the byte code is platform independent, it can be understood and 
+      processed by various JVMS on different operating systems.
+      
+      JIT = JIT is part of the JVM that will interpret the byte code to machine code in 
+      an optimized fashion. JIT uses hotspots to quickly turns familiar blocks of code into
+      machine code, instead of interpreting the whole program one line at a time.
+      
+2. Q: What are Constructors and how are they different than other class methods? 
+	  Can we invoke one constructor from another constructor? 
+	  Can we invoke a parent class constructor from a child class constructor?
+   A: A constructor is a method that is used to initialize the properties of an object when 
+      it is created. 
+      Other methods must have differing names than the class name, but the constructor is the 
+      only method that uses the class name. The constructor is invoked once when the object
+      of a class is created, but the other class methods can be invoked as many times as needed.
+      this() is used to invoke a constructor and super() to invoke a parent constructor.
+
+3. Q: What is method overloading and what is method overriding?
+   A: Method overloading (static binding, compile time polymorphism)- this is using the same 
+      method name but with varying parameters
+      Method overriding (dynamic binding, runtime polymorphism) - this is when a child class
+      uses the parent's class method and changes the implementation to fit its needs  
+         
+4. Q: What are the differences between final, finally and finalize?
+   A: final = means something is a constant. A final variable cannot be changed, a 
+      final method cannot be overriden and a final class cannot be inherited 
+      finally = this is used to run code when doing exception handling, and is often used with
+      the try block, but does not require the use of the catch. Finally is executed whether or 
+      not there is an exception, which makes the finally area a good place to close resources 
+      once the program is finished
+      finalize = this is called when the JVM is ready to call the garbage collector to clean 
+      up unused objects
+	
+5. Q: What are generics and what is type erasure?
+   A: Generics - this restricts the data type a collection can hold to a single type. This 
+      is good to use to prevent runtime exceptions concerning the wrong use of data types in
+      collecitons.
+      Type erasure - erases the generic label from collections after it has been compile time
+      checking but before runtime. Type erasure is useful for backward compatibility so earlier
+      Java versions before Generics were introduced could still run without issue.
+      
+6. Q: What is the difference between == and equals()?
+   A: == compares two object's memory location
+      equals() compares two object's values
+
+7. Q: What are class loaders and how do they work?
+   A: In Java, classes are loaded into memory by classes loaders, in hierachical fashion. 
+      The first class is loaded using the static main method. The bootstrap classloader 
+      loads all of the class libraries that come with the JDK in the jre/lib/*.jar classpath, 
+      then the extension class loader loads all the third party extensions needed for the program
+      which are in the ext/*.jar classpath, then the system classloader loads everything on the 
+      class path (like jdbc, hibernate, spring, and other framework classes)

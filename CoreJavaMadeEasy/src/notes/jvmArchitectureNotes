@@ -1,0 +1,96 @@
+JVM Architecture Notes:
+1. Virtual machine - software simulation of a real machine, which can perform operations just
+   like the real machine 
+2. 2 Types of virtual machines 
+	a. hardware based VMs - divides a machine into several logical systems, which are isolated
+	   from each other. The result of this is that underlying hardware resources are used and
+	   shared by all of the separate systems to the fullest
+	   Examples: VMWare, and any cloud computing software
+	b. application based VMs - these VMs provide a runtime environment for applications/programs
+	   Examples: JVM and CLR (Common Language Runtime) which is a runtime engine for .NET applications
+
+
+Components of a JVM
+1. Class Loader Subsystem = responsible for loading the Java .class files into memory
+	a. How it works: class loaders follows a delegation model. When the JVM comes across an 
+	   application class, it will check if it's in the method area. If it's not, it will ask
+	   the class loader system to load the class into the method area. And the class loader 
+	   system will ask the application classloader to load the class. The application 
+	   class loader then asks the extension class loader, which then asks the bootstrap 
+	   class loader.
+	   
+	   Class Loader System -> Application Classloader -> Extension Classloader -> Bootstrap classloader
+	   
+	b. The bootstrap classloader checks the class path jre/lib/*.jar. If the class is there,
+	   it will load it. If it's not, it will delegate the task back to extension classloader.
+	c. Extension classloader then checks the class path ext/*.jar. If it finds the class there,
+	   it will load it. If it does not, it will delegate the task back to application classloader
+	d. The application classloader checks the application class path for are any .jar files.
+	   If it finds it, it will load it. If it does not, it will throw either of these two exceptions:
+	   		1. NoClassDefFoundException 
+	   		2. ClassNotFoundException
+	   		
+3 Types of Class Loaders
+1. Bootstrap (Primordial) Classloader = responsible for loading the API classes that come with the JDK installation
+		a. these API classes are inside the rt.jar (class path = JDK/JRE/lib/rt.jar)
+		b. rt.jar are ready to use libraries that can be used in every Java program
+2. Extension Classloader = loads that classes from the ext folder 
+		a. class path = JDK/JRE/lib/ext
+3. Application Classloader = responsible for loading all of the application classes that we write 
+   that we put in the classpath environment variable 
+   
+   
+Class Loading is responsible for:
+1. Loading = the process of reading a .class file from the hard disk and storing it's binary
+   information in the JVM's method area. 
+   		a. Binary information stored for each class is:
+   			1. Class Name
+   			2. Parent Class Name
+	   		3. Method Information
+	   		4. Variable Information 
+	   		5. Constructor Information 
+	   		6. Modifier Information 
+	   		7. Constant Pool Information 
+	   	b. Once the .class file is loaded into the method area, the JVM creates an object of 
+	   	   the class representation that is loaded on the heap (the object representation is of 
+	   	   type java.lang.Class). This object representation is not a class object, it is an 
+	   	   object that represents a class object in the heap. Using the object representation,
+	   	   we can access the object's information at runtime.
+2. Linking (3 steps - verify, preparation, resolution)
+		a. Verification phase - tasked with ensuring that the binary representation of a 
+		   .class file in the method area is correct and not corrupt (checking done by 
+		   byte code verifier). If there is anything wrong with the binary information, the 
+		   byte code verifier will throw a java.lang,VerifyError 
+		b. Preparation - tasked with allocating memory for all of the static variables and 
+		   assigns the default value to them 
+		c. Resolution - tasked with changing the symbolic names with original memory references
+3. Initialization - it will initialize the static variables and assign them with their values
+		and will execute all static blocks
+		
+
+
+5 Areas in Memory
+
+1. Method Area - holds class level binary information when the class after class is read from hard disk
+		a. holds runtime constant pool 
+		b. area shared across multiple threads
+2. Stack Area - whenever the JVM creates a thread in the program, it also creates a stack for it
+		a. stores all method calls and local variables
+		b  once a method completes, it will be removed from the stack, and once the thread finishes,
+		   the stack for it will be destroyed as well
+		c. one thread cannot access the stack area of other threads
+		d. each stack frame has 3 parts 
+				1. local variable array - contains all of the parameters and local variables 
+				   of a method
+				2. operand stack - JVM workspace where operations are performing by pushing
+				   and popping as instructed by the logic in the method 
+				3. frame data - holds the constant pool of a particular method and holds 
+				   the exception table (provides references to catch block information if needed)
+3. Heap Area stores all of the objects created in the program, shared area that can be accessed 
+   by multiple threads
+4. PC Registers Area - Program Counter Registers hold the address of the current executing instruction
+		a. Every thread will have its own PC Registers Area
+		b. Once one instruction is completed, the PC Register is incremented to the next instruction
+		   that should be executed 
+5. Native Method Stack Area - stores method calls to other languages (like C or C++), each 
+   thread is allocated its own native method stack area

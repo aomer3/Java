@@ -1,0 +1,6 @@
+Internationalization Notes:
+1. Also known as I18N because there are 18 letters between I and N
+2. It is a process of supporting multiples languages and formats (i.e. date format) that are 
+	local to a particular location 
+3. Can be done with Locale, NumberFormat and DateFormat classes
+4. Locale is a combination of a location and a language (i.e. US_EN)

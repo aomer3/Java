@@ -1,0 +1,42 @@
+Regular Expressions Notes:
+1. Allows you to pattern match and validate a group of Strings (like email, phone numbers, etc.)
+
+Character classes = allow us to represent any character in a regular expression
+
+[xyz] = either x, y or z can be used
+
+[^xyz] = any other character, other than x,y or z can be used
+
+[a-z] = any lowercase alphabet character can be used
+
+[A-Z] = any uppercase alphabet character can be used
+
+[a-zA-Z] = either lowercase or uppercase alphabet character can be used
+
+[0-9] = any digit can be used 
+
+[a-zA-Z0-9] = any alphabet character or number can be used
+
+[^a-zA-Z0-9] = any other character, other than alphanumeric characters, can be used
+
+
+Meta Characters = predefined character classes
+\s = space character
+\d = any digit, alternative to [0-9]
+\w = any alphanumeric, alternative to [a-zA-Z0-9]
+. = any special characters
+\S = any character except space 
+\D = any character except digits 
+\W = any character except alphanumeric 
+
+Quantifiers = restricts how many times a character can occur
+x- = x can only occur once
+x? = can occur 0 or 1 time 
+x+ = can occur 1 or more times, but must be present at least once
+x* = optional occurance, it can occur 0 or more times 
+
+
+
+
+
+

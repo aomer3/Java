@@ -1,0 +1,8 @@
+Reflections Notes:
+1. an API that allows you to inspect and modify the behavior of a class dynamically at
+   runtime
+2. Using reflections, you can create a class dynamically, invoke the methods on it, and
+   change its private fields (without using the getter and setter methods)
+3. Java frameworks use reflections behind the scenes to be able to what they do (i.e. @test
+   with Junit, dependecy injection with Spring, creation and executing of sql queries then creating
+   objects and setting their values with Hibernate, servers creating servlets and the use of annotations)

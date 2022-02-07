@@ -1,0 +1,7 @@
+Annotation Notes:
+1. Introduced in Java 1.5
+2. Meta data, or special symbols, which start with @ symbol followed by annotation name
+3. Can be used in fields, classes and and methods
+4. When used, add special meaning 
+5. Types of Annotations, those used at : Compile time, Build time, Runtime 
+6. Annotations can be marker annotations (annotations that don't take any parameters)  

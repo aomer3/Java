@@ -1,0 +1,6 @@
+NumberFormat Notes:
+1. Different countries follow different styles to represent numbers
+   Example: 456789.123
+   US will call this:  456,789.123 (456 thousand)
+   India will call this: 4,56,789.123 (4 lakhs, 56 thousand)
+2. To represent these numbers in different formats, we use NumberFormat
