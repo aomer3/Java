@@ -1,0 +1,5 @@
+Enum Notes:
+1.Used to represent a group of named constants
+2.Enums are always public, static and final and can be access by using class name
+3.Because enum implicitly extends Enum, you cannot extend an enum to other classes, but
+  you can implement interfaces (and even doing this is rarely done)
